@@ -8,8 +8,8 @@ class Ball(Turtle):
         self.shapesize(1.1,1.1)
         self.turtlesize(1.1,1.1)
         self.penup()
-        self.ymovement = 0.1
-        self.xmovement = 0.1
+        self.ymovement = 3
+        self.xmovement = 3
     
     def move(self):
         new_x = self.xcor() + self.xmovement
@@ -30,22 +30,22 @@ class Ball(Turtle):
 
     def increase_speed(self):
         if self.xmovement < 0:
-            self.xmovement -= 0.01
+            self.xmovement -= 0.2
         else:
-            self.xmovement += 0.01
+            self.xmovement += 0.2
 
         if self.ymovement < 0:
-            self.ymovement -= 0.01
+            self.ymovement -= 0.2
         else:
-            self.ymovement += 0.01
+            self.ymovement += 0.2
 
     def reset_speed(self):
         if self.xmovement < 0:
-            self.xmovement = 0.1
+            self.xmovement = 3
         else:
-            self.xmovement = 0.1
+            self.xmovement = 3
 
         if self.ymovement < 0:
-            self.ymovement = 0.1
+            self.ymovement = 3
         else:
-            self.ymovement = 0.1
+            self.ymovement = 3

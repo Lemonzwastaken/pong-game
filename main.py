@@ -3,6 +3,11 @@ from turtle import Turtle, Screen
 from paddles import Paddle
 from ball import Ball
 from scoreboard import ScoreBoard
+import time
+from sounds import play_sound
+import os
+print(os.path.exists("hit.wav"))
+print(os.path.abspath("hit.wav"))
 
 screenturtle = Turtle()
 screen = Screen()
@@ -58,7 +63,9 @@ game_running = True
 while game_running:
     screen.update()
     ball.move()
+    time.sleep(0.01)
 
+    
     # AI MODE
     if mode == "2":
         if ball.ycor() > r_paddle.ycor() + AI_SPEED:
@@ -74,18 +81,21 @@ while game_running:
     if ball.distance(r_paddle) < 60 and ball.xcor() > 340 or ball.distance(l_paddle) < 60 and ball.xcor() < -340:
         ball.change_x()
         ball.increase_speed()
+        play_sound("hit.wav")
 
     # BALL PAST R_PADDLE
     if ball.xcor() > 400:
         scoreboard.l_point()
         ball.refresh()
         ball.reset_speed()
+        play_sound("point.wav")
 
     # BALL PAST L_PADDLE
     if ball.xcor() < -400:
         scoreboard.r_point()
         ball.refresh()
         ball.reset_speed()
+        play_sound("point.wav")
 
     # WIN FOR MODE 1
     if mode == "1":
