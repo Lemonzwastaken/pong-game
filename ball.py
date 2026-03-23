@@ -27,3 +27,25 @@ class Ball(Turtle):
 
     def refresh(self):
         self.goto(0,0)
+
+    def increase_speed(self):
+        if self.xmovement < 0:
+            self.xmovement -= 0.01
+        else:
+            self.xmovement += 0.01
+
+        if self.ymovement < 0:
+            self.ymovement -= 0.01
+        else:
+            self.ymovement += 0.01
+
+    def reset_speed(self):
+        if self.xmovement < 0:
+            self.xmovement = 0.1
+        else:
+            self.xmovement = 0.1
+
+        if self.ymovement < 0:
+            self.ymovement = 0.1
+        else:
+            self.ymovement = 0.1

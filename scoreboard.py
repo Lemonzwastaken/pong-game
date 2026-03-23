@@ -5,7 +5,6 @@ class ScoreBoard(Turtle):
         super().__init__()
         self.l_score = 0
         self.r_score = 0
-        
         self.color('white')
         self.penup()
         self.hideturtle()
@@ -25,3 +24,7 @@ class ScoreBoard(Turtle):
     def r_point(self):
         self.r_score += 1
         self.update_scoreboard()
+
+    def show_winner(self, player):
+        self.goto(0,0)
+        self.write(f"{player} Wins!", align="center", font=("Courier", 36, "bold"))
