@@ -32,7 +32,7 @@ A classic two-player Pong game built with Python's `turtle` module, featuring mu
 | Left Player | `W` | `S` |
 | Right Player | `↑` | `↓` |
 
-> In **AI mode**, the right paddle is controlled by the computer.
+> In **AI mode**, the computer controls the right paddle.
 
 ---
 
